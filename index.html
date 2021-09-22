@@ -11,6 +11,9 @@
 </head>
 <body>
     <h1>Salary Calculator</h1>
+
+        <!-- Form input -->
+
         
     <h2>Add Employee</h2>
     <input 
@@ -34,12 +37,19 @@
         placeholder="Title"
     /> 
     <input 
-        type="text"
-        id="annualSalary"
+        type="number"
+        min="0"
+        id="annualSalaryInput"
         placeholder="Annual Salary"
-    /> 
-    <button>Submit</button>
-
+    />
+    <input type="submit" value="submit"/> 
+    <!-- <button>Submit</button> -->
+    
+    
+    
+    
+    <!-- Employee input -->
+    
     <h2>Employees</h2>
     <table>
         <thead>
