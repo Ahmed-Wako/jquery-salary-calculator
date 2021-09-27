@@ -1,5 +1,9 @@
 $(document).ready(onReady)
+let monthlyCost = 4000+4833.33 + 6666.66
 
+$(document).ready(() => {
+    $('#monthlyCost').text(`Total Monthly Cost: $${monthlyCost.toFixed(2)}`)
+})
 
 function onReady(){
     console.log('JQ Sourced!');
@@ -7,6 +11,10 @@ function onReady(){
 $(document).on('click', '#submitButton', onSubmit);
 }
 
+
+function onDelete(event){
+    $(event.target.parentNode.parentNode).remove()
+}
 
 function onSubmit(){
 
@@ -17,6 +25,13 @@ function onSubmit(){
         title: $('#titleInput').val(),
         annualSalary: Number ($('#annualSalaryInput').val())
     };
+
+        $('#firstNameInput').val("")
+        $('#lastNameInput').val("")
+        $('#idInput').val("")
+        $('#titleInput').val("")
+        $('#annualSalaryInput').val("")
+
     console.log('new employee', employee);
 
 
@@ -28,16 +43,20 @@ function onSubmit(){
             <td>${employee.title}</td>
             <td>$${employee.annualSalary}</td>
             <td>
-                <button class="deleteEmployee">Delete</button>
+                <button class="deleteEmployee" onclick = 'onDelete(event)'>Delete</button>
             </td>
         </tr>
-
-
     `)
 
+    
 
-    let monthlyCost = employee.annualSalary / 12;
-    $('#totalMonthly').text(monthlyCost.toFixed(2));
+
+    monthlyCost += employee.annualSalary / 12;
+    $('#monthlyCost').text(`Total Monthly Cost: $${monthlyCost.toFixed(2)}`);
+
+    if(monthlyCost > 20000){
+        $('#monthlyCost').css("background-color","red")
+    }
 
 
 

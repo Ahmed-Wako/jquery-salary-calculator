@@ -42,7 +42,7 @@
         id="annualSalaryInput"
         placeholder="Annual Salary"
     />
-    <input type="submit" value="submit"/> 
+    <input id =  'submitButton' type="submit" value="submit"/> 
     <!-- <button>Submit</button> -->
     
     
@@ -70,11 +70,9 @@
                 <td>Team Lead</td>
                 <td>$80,000</td>
                 <td>
-                    <button class="deleteEmployee">Delete</button>
+                    <button class="deleteEmployee" onclick = 'onDelete(event)'>Delete</button>
                 </td>
             </tr>
-        </tbody>
-        <tbody>
             <tr>
                 <td>Maurice</td>
                 <td>Moss</td>
@@ -82,11 +80,9 @@
                 <td>Support Team</td>
                 <td>$58,000</td>
                 <td>
-                    <button class="deleteEmployee">Delete</button>
+                    <button class="deleteEmployee" onclick = 'onDelete(event)'>Delete</button>
                 </td>
             </tr>
-        </tbody>
-        <tbody>
             <tr>
                 <td>Roy</td>
                 <td>Smith</td>
@@ -94,13 +90,13 @@
                 <td>Team Lead</td>
                 <td>$48,000</td>
                 <td>
-                    <button class="deleteEmployee">Delete</button>
+                    <button class="deleteEmployee" onclick = 'onDelete(event)'>Delete</button>
                 </td>
             </tr>
         </tbody>
     </table>
     
-    <div>Total Monthly Cost: $15,000.00</div>
+    <div id = 'monthlyCost'></div>
 
 
         
